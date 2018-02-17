@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   /* width: 100%;
@@ -11,11 +12,20 @@ body {
   color: #424242;
 }
 
-h1, h2, h3, h4, h5 {
-  margin: 0; 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
 }
 
-header, nav, footer, section, article, div {
+header,
+nav,
+footer,
+section,
+article,
+div {
   box-sizing: border-box;
 }
 
@@ -24,7 +34,6 @@ ul {
   padding: 0;
   margin: 0;
 }
-
 
 /*
  *
@@ -39,7 +48,6 @@ ul {
   text-decoration: none;
 }
 
-
 /*
  *
  * Header
@@ -51,14 +59,12 @@ ul {
   min-height: 56px;
   transition: min-height 0.3s;
   width: 100%;
-  
 }
 
-.header__inner {  
+.header__inner {
   display: flex;
   justify-content: center;
   align-content: center;
- 
 }
 
 .header__logo {
@@ -76,7 +82,6 @@ ul {
   color: #212121;
 }
 
-
 /*
  *
  * Top Level Navigation
@@ -87,19 +92,17 @@ ul {
   /* width: 800px; */
   /* margin-left: auto;
   margin-right: auto; */
-  
 }
 
 .nav__list {
- display: flex;
- align-content: center;
- justify-content: center
+  display: flex;
+  align-content: center;
+  justify-content: center
 }
 
 .nav__item {
   box-sizing: border-box;
   display: inline-block;
-  
   text-align: center;
   line-height: 24px;
   padding: 24px;
@@ -116,7 +119,6 @@ ul {
   color: #212121;
 }
 
-
 /*
  *
  * Main
@@ -127,8 +129,7 @@ main {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
   max-width: 960px;
   margin-left: auto;
-  margin-right: auto; 
-  
+  margin-right: auto;
 }
 
 /*
@@ -137,11 +138,11 @@ main {
  *
  */
 
- section.content{
+section.content {
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
- }
+}
 
 /*
  *
@@ -150,7 +151,6 @@ main {
  */
 
 .hero {
-  
   width: 60%;
   position: relative;
   background-image: url("./images/dog.jpg");
@@ -163,12 +163,11 @@ main {
   background-color: #000;
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
-  bottom: 0;  
+  bottom: 0;
   width: 100%;
   color: #fff;
   padding: 1em;
 }
-
 
 /*
  *
@@ -177,9 +176,7 @@ main {
  */
 
 .top-news {
-  
   width: 40%;
-  
   border-bottom: 1px solid #E0E0E0;
   padding: 1em;
 }
@@ -215,7 +212,6 @@ main {
   text-decoration: underline;
 }
 
-
 /*
  *
  * Sport Scores
@@ -224,7 +220,6 @@ main {
 
 .scores {
   width: 60%;
-  
   padding-top: 1em;
 }
 
@@ -235,7 +230,7 @@ main {
 
 .scores__table th,
 .scores__table td {
-  padding: 1em; 
+  padding: 1em;
 }
 
 .scores__table th {
@@ -272,7 +267,6 @@ main {
  */
 
 .weather {
-  
   width: 40%;
   padding: 1em;
 }
@@ -295,7 +289,6 @@ main {
 
 .weather__today__image {
   vertical-align: middle;
-  
 }
 
 .weather__today__temp {
@@ -320,7 +313,6 @@ main {
 .weather__next__image {
   width: 100%;
 }
-
 
 /*
  *
@@ -358,7 +350,6 @@ main {
   text-decoration: underline;
 }
 
-
 /*
  *
  * Footer
@@ -381,60 +372,51 @@ footer a {
   color: #333;
 }
 
-
-
 @media all and (max-width: 720px) {
- section.content {
+  section.content {
     flex-flow: column;
   }
-
+  .header__logo {
+    height: 50px;
+    margin-top: 20px;
+  }
   .header__title {
     font-size: 1.8em;
     line-height: 4em;
   }
-
- 
-
   .hero {
     width: 100%;
     min-height: 300px;
-    
   }
-  .hero article.description{
-  padding: 1em 24px 1em 24px;
- }
+  .hero article.description {
+    padding: 1em 24px 1em 24px;
+  }
   .top-news {
     width: 100%;
     min-height: 150px;
-    padding-left:24px;
+    padding-left: 24px;
     padding-right: 24px;
   }
-
   .scores {
     width: 100%;
     min-height: 200px;
   }
-
   .weather {
     width: 100%;
-    padding-left:24px;
-    padding-right: 24px; 
+    padding-left: 24px;
+    padding-right: 24px;
   }
-
   .weather__today {
     width: 100%;
   }
-
   .weather-left {
     width: 50%;
     float: left;
   }
-
   .weather__next {
     float: right;
     width: 50%;
   }
-
   .scores__table th,
   .scores__table td {
     padding: .5em;
@@ -442,26 +424,22 @@ footer a {
   .scores__table td:nth-child(1) {
     text-align: center;
   }
-
-  .recent-news{
-    padding-left:24px;
-    padding-right: 24px; 
+  .recent-news {
+    padding-left: 24px;
+    padding-right: 24px;
   }
-
   .news__title {
-    
     line-height: 48px;
-    
-}
-
-  footer{background-color: #E0E0E0}
-  footer li{
-    display: block;
-    
   }
-  footer a{
+  footer {
+    background-color: #f8f8f8;
+  }
+  footer li {
+    display: block;
+  }
+  footer a {
     display: block;
     padding: 24px 0;
+    font-size: 1.1em
   }
-
 }
