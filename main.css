@@ -2,8 +2,10 @@ body,
 html {
   margin: 0;
   padding: 0;
-  /* width: 100%;
-  height: 100%; */
+  /* 
+  width: 100%;
+  height: 100%; 
+  */
 }
 
 body {
@@ -82,6 +84,17 @@ ul {
   color: #212121;
 }
 
+#menuToggler {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 20px;
+  top: 20px;
+  display: none;
+  outline: none;
+  z-index: 10;
+}
+
 /*
  *
  * Top Level Navigation
@@ -89,10 +102,7 @@ ul {
  */
 
 .nav {
-  /* width: 800px; */
-  /* margin-left: auto;
-  margin-right: auto; */
-  
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
 
 .nav__list {
@@ -373,6 +383,14 @@ footer a {
   color: #333;
 }
 
+
+/*
+ *
+ * Media Queries
+ *
+ */
+
+/*MEDIUM  DEVICES*/
 @media all and (max-width: 720px) {
   section.content {
     flex-flow: column;
@@ -445,26 +463,57 @@ footer a {
   }
 }
 
-
-
+/*SMALL DEVICES*/
 @media all and (max-width: 374px) {
+  .header__title {
+    font-size: 1.4em;
+    margin-top: 27px;
+  }
+  .header__logo {
+    height: 40px;
+    margin-top: 14px;
+    margin-left: 20px;
+    margin-right: 0;
+  }
+  #menuToggler {
+    display: block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  .nav {
+    display: block;
+    position: absolute;
+    width: 70%;
+    transform: translateX(-100%);
+    height: 100vh;
+    top: 0;
+    background: rgba(248, 247, 247, 0.98);
+    z-index: 8;
+  }
   .nav__list {
-    height: 48px;
-    align-items: center;
-    justify-content: space-around; 
+    display: block;
+    padding-top: 80px;
   }
-  
-  .nav__item {
-    
-    line-height: auto;
-    padding: 0px;
-    
+  .nav li {
+    display: block;
+    border-bottom: 1px solid #ccc;
   }
-
-  .scores__table th,
-  .scores__table td {
-    padding-left: .2em;
-    padding-right: .2em;
-    font-size: 10px;
+  .nav li a {
+    display: block;
+    font-weight: bold;
+  }
+  #menuToggler:before {
+    content: '\2630';
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: bold;
+    text-align: center
+  }
+  #menuToggler:checked:before {
+    content: '\2716'
+  }
+  #menuToggler:checked+nav {
+    transform: none;
   }
 }
