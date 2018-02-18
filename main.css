@@ -92,11 +92,12 @@ ul {
   /* width: 800px; */
   /* margin-left: auto;
   margin-right: auto; */
+  
 }
 
 .nav__list {
   display: flex;
-  align-content: center;
+  align-items: center;
   justify-content: center
 }
 
@@ -382,7 +383,7 @@ footer a {
   }
   .header__title {
     font-size: 1.8em;
-    line-height: 4em;
+    margin-top: 34px;
   }
   .hero {
     width: 100%;
@@ -441,5 +442,29 @@ footer a {
     display: block;
     padding: 24px 0;
     font-size: 1.1em
+  }
+}
+
+
+
+@media all and (max-width: 374px) {
+  .nav__list {
+    height: 48px;
+    align-items: center;
+    justify-content: space-around; 
+  }
+  
+  .nav__item {
+    
+    line-height: auto;
+    padding: 0px;
+    
+  }
+
+  .scores__table th,
+  .scores__table td {
+    padding-left: .2em;
+    padding-right: .2em;
+    font-size: 10px;
   }
 }
