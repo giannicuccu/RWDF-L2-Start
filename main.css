@@ -166,6 +166,7 @@ section.content {
   position: relative;
   background-image: url("./images/dog.jpg");
   background-size: cover;
+  background-position: center center;
   /* height: 300px; */
 }
 
@@ -336,9 +337,18 @@ section.content {
   padding: 1em;
 }
 
+.recent-news ul{
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
 .snippet {
-  clear: both;
-  margin: 24px 0;
+  width: 48%;
+  margin: 0;
+  padding: 10px 0;
+  box-sizing: border-box;
 }
 
 .snippet__thumbnail {
@@ -392,6 +402,10 @@ footer a {
 
 /*MEDIUM  DEVICES*/
 @media all and (max-width: 720px) {
+  body{font-size: 14px;}
+  .hero p{
+    font-size: 12px;
+  }
   section.content {
     flex-flow: column;
   }
@@ -419,6 +433,11 @@ footer a {
   .scores {
     width: 100%;
     min-height: 200px;
+    margin-bottom: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 20px;
+    background-color: #f8f8f8
   }
   .weather {
     width: 100%;
@@ -436,6 +455,10 @@ footer a {
     float: right;
     width: 50%;
   }
+
+  .weather__next__image {
+    width: 80%;
+}
   .scores__table th,
   .scores__table td {
     padding: .5em;
@@ -447,8 +470,13 @@ footer a {
     padding-left: 24px;
     padding-right: 24px;
   }
+
+  .recent-news p {
+    line-height: 1.44em;
+  }
   .news__title {
     line-height: 48px;
+    font-weight: 600;
   }
   footer {
     background-color: #f8f8f8;
@@ -465,6 +493,8 @@ footer a {
 
 /*SMALL DEVICES*/
 @media all and (max-width: 374px) {
+
+  .hero p{display: none}
   .header__title {
     font-size: 1.4em;
     margin-top: 27px;
@@ -516,4 +546,36 @@ footer a {
   #menuToggler:checked+nav {
     transform: none;
   }
+}
+
+/*MINOR BREAKPOINTS*/
+
+@media all and (max-width: 560px) {
+  .snippet {
+    width: 100%;
+    
+  }
+
+}
+
+@media screen and (max-width:560px){
+
+  .weather {
+    display: flex;
+    flex-flow: column;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .weather__today {
+    
+  }
+  .weather-left {
+    width: 100%;
+   
+  }
+  .weather__next {
+    
+    width: 100%;
+  }
+
 }
