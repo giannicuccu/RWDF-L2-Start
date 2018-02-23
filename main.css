@@ -2,7 +2,7 @@ body,
 html {
   margin: 0;
   padding: 0;
-  height: 100%;
+  /* height: 100%;  Removed to hide the lateral scrollbar */
   width: 100vw;
   overflow-x: hidden; /* fix for right sliding menu */
   
@@ -89,7 +89,7 @@ ul {
 }
 
 #menuToggleLabel {
-  position: absolute;
+  position: fixed;
   width: 30px;
   height: 30px;
   right: 20px;
@@ -534,7 +534,7 @@ footer a {
   */
   .nav {
     display: block;
-    position: absolute;
+    position: fixed;
     width: 250px;
     transform: translate3d(250px, 0, 0);
     height: 100vh;
