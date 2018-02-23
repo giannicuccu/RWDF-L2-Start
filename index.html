@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- added maximum-scale=1.0, user-scalable=no to fix right menu offcanvas weird behaviour in dev tools emulators -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Brighton Times</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="main.css">
@@ -19,7 +20,9 @@
         
       </div>
     </header>
+    <!-- using checkbox label to toggle offcanvas menu -->
     <input type="checkbox" name="" id="menuToggler">
+    <label for="menuToggler" id="menuToggleLabel" title="toggle Main Menu"><span>Toggle Menu</span></label>
      <nav id="drawer" class="nav">
       <ul class="nav__list">
         <li class="nav__item"><a href="#">News</a></li>
