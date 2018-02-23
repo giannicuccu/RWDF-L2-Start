@@ -2,10 +2,10 @@ body,
 html {
   margin: 0;
   padding: 0;
-  /* 
-  width: 100%;
-  height: 100%; 
-  */
+  height: 100%;
+  width: 100vw;
+  overflow-x: hidden; /* fix for right sliding menu */
+  
 }
 
 body {
@@ -59,7 +59,7 @@ ul {
 .header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
   min-height: 56px;
-  transition: min-height 0.3s;
+  transition: all 0.5s;
   width: 100%;
 }
 
@@ -85,14 +85,23 @@ ul {
 }
 
 #menuToggler {
+  display: none;
+}
+
+#menuToggleLabel {
   position: absolute;
   width: 30px;
   height: 30px;
-  left: 20px;
+  right: 20px;
   top: 20px;
   display: none;
   outline: none;
-  z-index: 10;
+  z-index: 11;
+}
+
+#menuToggleLabel span {
+  display: block;
+  text-indent: -9999px;
 }
 
 /*
@@ -102,13 +111,15 @@ ul {
  */
 
 .nav {
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+  transition: transform 0.5s ease-in-out;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .nav__list {
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: space-around;
 }
 
 .nav__item {
@@ -337,7 +348,7 @@ section.content {
   padding: 1em;
 }
 
-.recent-news ul{
+.recent-news ul {
   display: flex;
   flex-flow: wrap;
   justify-content: space-between;
@@ -393,17 +404,20 @@ footer a {
   color: #333;
 }
 
-
 /*
  *
  * Media Queries
  *
  */
 
-/*MEDIUM  DEVICES*/
+/* TABLETS
+*/
+
 @media all and (max-width: 720px) {
-  body{font-size: 14px;}
-  .hero p{
+  body {
+    font-size: 14px;
+  }
+  .hero p {
     font-size: 12px;
   }
   section.content {
@@ -455,10 +469,9 @@ footer a {
     float: right;
     width: 50%;
   }
-
   .weather__next__image {
     width: 80%;
-}
+  }
   .scores__table th,
   .scores__table td {
     padding: .5em;
@@ -470,7 +483,6 @@ footer a {
     padding-left: 24px;
     padding-right: 24px;
   }
-
   .recent-news p {
     line-height: 1.44em;
   }
@@ -491,13 +503,25 @@ footer a {
   }
 }
 
-/*SMALL DEVICES*/
-@media all and (max-width: 374px) {
+/* LARGE SMARTPHONES
+*/
 
-  .hero p{display: none}
+@media all and (max-width: 425px) {
+  main {
+    padding-top: 62px
+  }
+  header.header {
+    position: fixed;
+    background: white;
+    z-index: 9;
+  }
+  /*move logo and name to the left*/
+  .header__inner {
+    justify-content: flex-start;
+  }
   .header__title {
-    font-size: 1.4em;
-    margin-top: 27px;
+    font-size: 1.6em;
+    margin-top: 24px;
   }
   .header__logo {
     height: 40px;
@@ -505,22 +529,38 @@ footer a {
     margin-left: 20px;
     margin-right: 0;
   }
-  #menuToggler {
-    display: block;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-  }
+  /* off canvas menu show/hide 
+  inspired to this https://codepen.io/erikterwan/pen/EVzeRP
+  */
   .nav {
     display: block;
     position: absolute;
-    width: 70%;
-    transform: translateX(-100%);
+    width: 250px;
+    transform: translate3d(250px, 0, 0);
     height: 100vh;
     top: 0;
+    right: 0;
     background: rgba(248, 247, 247, 0.98);
     z-index: 8;
   }
+  #menuToggler:checked~nav {
+    transform: none;
+  }
+  #menuToggleLabel {
+    display: block;
+  }
+  #menuToggleLabel:before {
+    content: '\2630';
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: bold;
+    text-align: center;
+    background: #fff;
+  }
+  #menuToggler:checked+#menuToggleLabel:before {
+    content: '\2716';
+  }
+  /*off canvas items style*/
   .nav__list {
     display: block;
     padding-top: 80px;
@@ -533,49 +573,124 @@ footer a {
     display: block;
     font-weight: bold;
   }
-  #menuToggler:before {
-    content: '\2630';
-    font-size: 25px;
-    line-height: 25px;
-    font-weight: bold;
-    text-align: center
-  }
-  #menuToggler:checked:before {
-    content: '\2716'
-  }
-  #menuToggler:checked+nav {
-    transform: none;
-  }
 }
 
 /*MINOR BREAKPOINTS*/
 
+/*phablets */
+
 @media all and (max-width: 560px) {
   .snippet {
     width: 100%;
-    
   }
-
 }
 
-@media screen and (max-width:560px){
-
+@media screen and (max-width:560px) {
   .weather {
     display: flex;
     flex-flow: column;
     padding-left: 24px;
     padding-right: 24px;
   }
-  .weather__today {
-    
-  }
   .weather-left {
     width: 100%;
-   
   }
   .weather__next {
-    
     width: 100%;
   }
+}
 
+/*small phones*/
+
+@media all and (max-width: 374px) {
+  .hero p {
+    display: none
+  }
+  .header__title {
+    font-size: 1.4em;
+    margin-top: 22px;
+  }
+  .header__logo {
+    height: 40px;
+    margin-top: 11px;
+    margin-left: 20px;
+    margin-right: 0;
+  }
+}
+
+/* no more tables with some changes*/
+
+@media only screen and (max-width: 460px) {
+  /* Force table to not be like tables anymore */
+  #no-more-tables table,
+  #no-more-tables thead,
+  #no-more-tables tbody,
+  #no-more-tables th,
+  #no-more-tables td,
+  #no-more-tables tr {
+    display: block;
+    margin: 0;
+    padding: 0 px;
+    -webkit-border-horizontal-spacing: 0;
+    -webkit-border-vertical-spacing: 0;
+    background: none;
+    border-collapse: collapse;
+  }
+  /* Hide table headers (but not display: none;, for accessibility) */
+  #no-more-tables thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  #no-more-tables tr {
+    border: 0px solid #ccc;
+  }
+  #no-more-tables td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 2px solid #eee;
+    position: relative;
+    padding-left: 0%;
+    white-space: normal;
+    /* text-align:left; */
+  }
+  #no-more-tables td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    /* top: -22px;
+  left: 6px;
+  width: 45%; 
+  padding-right: 10px; 
+  white-space: nowrap;
+  text-align:left;
+  font-weight: bold; */
+    display: none
+  }
+  /*
+Label the data
+*/
+  #no-more-tables td:before {
+    content: attr(data-title);
+  }
+  #no-more-tables td[data-title="date"] {
+    padding: 10px 0;
+    margin: 0;
+    margin-top: 15px;
+    text-transform: uppercase
+  }
+  #no-more-tables td[data-title="team"] {
+    padding: 0;
+    margin: 0;
+    width: calc((100% - 13px)/4);
+    display: inline-block;
+    font-size: 16px;
+  }
+  #no-more-tables td[data-title="score"] {
+    padding: 0;
+    margin: 0;
+    width: calc((100% - 13px)/4);
+    display: inline-block;
+    font-size: 16px;
+  }
 }
