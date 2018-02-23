@@ -495,6 +495,7 @@ footer a {
 @media all and (max-width: 374px) {
 
   .hero p{display: none}
+
   .header__title {
     font-size: 1.4em;
     margin-top: 27px;
@@ -578,4 +579,84 @@ footer a {
     width: 100%;
   }
 
+}
+
+
+@media only screen and (max-width: 460px) {
+    
+  /* Force table to not be like tables anymore */
+#no-more-tables table, 
+#no-more-tables thead, 
+#no-more-tables tbody, 
+#no-more-tables th, 
+#no-more-tables td, 
+#no-more-tables tr { 
+  display: block; 
+  margin: 0;
+  padding: 0 px;
+  -webkit-border-horizontal-spacing:0;
+  -webkit-border-vertical-spacing:0;
+background:none;
+
+}
+
+/* Hide table headers (but not display: none;, for accessibility) */
+#no-more-tables thead tr { 
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+#no-more-tables tr { border: 0px solid #ccc; }
+
+#no-more-tables td { 
+  /* Behave  like a "row" */
+  border: none;
+  border-bottom: 2px solid #eee; 
+  position: relative;
+  padding-left: 0%; 
+  white-space: normal;
+  /* text-align:left; */
+}
+
+#no-more-tables td:before { 
+  /* Now like a table header */
+  position: absolute;
+  /* Top/left values mimic padding */
+  top: 6px;
+  left: 6px;
+  width: 45%; 
+  padding-right: 10px; 
+  white-space: nowrap;
+  text-align:left;
+  font-weight: bold;
+  display: none
+}
+
+/*
+Label the data
+*/
+#no-more-tables td:before { content: attr(data-title); }
+
+#no-more-tables td[data-title="date"] {
+  padding: 10px 0 ; 
+  margin: 0;
+  margin-top:15px; 
+  text-transform: uppercase
+     }
+#no-more-tables td[data-title="team"] {
+  padding: 0; 
+  margin: 0; 
+  width: calc((100% - 13px)/4);
+  display: inline-block;
+  font-size: 16px;
+    }
+#no-more-tables td[data-title="score"] {
+  padding: 0; 
+  margin: 0; 
+  width: calc((100% - 13px)/4);
+  display: inline-block;
+  font-size: 16px;
+   
+}
 }
