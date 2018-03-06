@@ -1,0 +1,23 @@
+{
+  "name": "rwfw2",
+  "version": "1.0.0",
+  "description": "responsive blog project",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giannicuccu/RWDF-L2-Start.git"
+  },
+  "author": "gianni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/giannicuccu/RWDF-L2-Start/issues"
+  },
+  "homepage": "https://github.com/giannicuccu/RWDF-L2-Start#readme"
+}
