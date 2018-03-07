@@ -175,7 +175,8 @@ section.content {
 .hero {
   width: 60%;
   position: relative;
-  background-image: url("./images/dog.jpg");
+  background-image: url("./images/dog-medium.jpg");
+  background-image: -webkit-image-set( url('./images/dog-medium.webp') 1x, url('./images/dog-medium-2x.webp') 2x );
   background-size: cover;
   background-position: center center;
   /* height: 300px; */
@@ -363,7 +364,7 @@ section.content {
 }
 
 .snippet__thumbnail {
-  width: 100px;
+  width: 40%;
   float: left;
   margin-right: 1em;
 }
@@ -501,6 +502,12 @@ footer a {
     padding: 24px 0;
     font-size: 1.1em
   }
+
+  .snippet__thumbnail {
+    width: 100%;
+    float: left;
+    margin-right: 1em;
+  }
 }
 
 /* LARGE SMARTPHONES
@@ -583,6 +590,10 @@ footer a {
   .snippet {
     width: 100%;
   }
+
+  .snippet__thumbnail {
+    width: calc(50vw);
+  }
 }
 
 @media screen and (max-width:560px) {
@@ -602,7 +613,7 @@ footer a {
 
 /*small phones*/
 
-@media all and (max-width: 374px) {
+@media all and (max-width: 375px) {
   .hero p {
     display: none
   }
@@ -616,6 +627,11 @@ footer a {
     margin-left: 20px;
     margin-right: 0;
   }
+
+  .snippet__thumbnail {
+    width: calc(100vw - 3.5em);
+  }
+  
 }
 
 /* no more tables with some changes*/
