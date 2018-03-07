@@ -175,11 +175,16 @@ section.content {
 .hero {
   width: 60%;
   position: relative;
-  background-image: url("./images/dog-medium.jpg");
+  /* background-image: url("./images/dog-medium.jpg");
   background-image: -webkit-image-set( url('./images/dog-medium.webp') 1x, url('./images/dog-medium-2x.webp') 2x );
   background-size: cover;
-  background-position: center center;
+  background-position: center center; */
   /* height: 300px; */
+}
+
+.hero .heropic {
+  max-width: 100%;
+ 
 }
 
 .hero article {
@@ -326,7 +331,7 @@ section.content {
 
 .weather__next__item {
   display: inline-block;
-  width: 20%;
+  width: 19%;
   text-align: center;
 }
 
@@ -434,7 +439,7 @@ footer a {
   }
   .hero {
     width: 100%;
-    min-height: 300px;
+    /* min-height: 300px; */
   }
   .hero article.description {
     padding: 1em 24px 1em 24px;
@@ -630,7 +635,15 @@ footer a {
 
   .snippet__thumbnail {
     width: calc(100vw - 3.5em);
+    float:none;
   }
+
+  h3.snippet__title{
+    margin-top: 0.3125rem
+  }
+  .recent-news p {
+    margin-top: 0.3125rem
+}
   
 }
 

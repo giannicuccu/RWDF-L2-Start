@@ -27,12 +27,12 @@ module.exports = function(grunt) {
               
             },{
               name: 'medium',
-              width: 400,
+              width: 800,
               quality: 60
               
             },{
               name: "medium",
-              width: 1400,
+              width: 1600,
               separator: "-",
               suffix: "-2x",
               quality: 60
@@ -80,7 +80,7 @@ module.exports = function(grunt) {
           }]
         },
       },
-  
+      /* Add webp files */
       cwebp: {
           dynamic: {
           options: {
